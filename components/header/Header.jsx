@@ -6,8 +6,8 @@ export const Header = () => {
       <div className="p-5">
         <div className="flex gap-x-4 justify-center">
           <Link href="/matches">Matches</Link>
-          <Link href="competitions">Competition</Link>
-          <Link href="teams">Teams</Link>
+          <Link href="/competitions">Competition</Link>
+          <Link href="/teams">Teams</Link>
         </div>
       </div>
     </div>
