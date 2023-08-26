@@ -18,7 +18,7 @@ export default async function MatchesPage() {
               <p className="pl-1 ">{p.team1_name}</p>
               <p className="pl-1">{p.team2_name}</p>
               <DiaPartido shedule={p.shedule} />
-              <Apuesta />
+              <Apuesta result={p.result} />
             </div>
           </div>
         ))}

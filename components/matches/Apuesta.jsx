@@ -1,12 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 
-export const Apuesta = () => {
+export const Apuesta = ({result}) => {
+  // console.log(result);
   const [tickedOne, setTickedOne] = useState(false);
   const [tickedX, setTickedX] = useState(false);
   const [tickedTwo, setTickedTwo] = useState(false);
+
+  useEffect(() => {
+    
+    if(result === '1'){
+      setTickedOne(true)
+    }
+    if(result === 'x'){
+      setTickedX(true)
+    }
+    if(result === '2'){
+      setTickedTwo(true)
+    }
+  
+   
+  }, [result])
+  
+
+
+
   function handleClickOne() {
     setTickedOne(!tickedOne);
   }
@@ -57,3 +77,5 @@ export const Apuesta = () => {
     </div>
   );
 };
+
+

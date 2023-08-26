@@ -22,7 +22,7 @@ export default async function CompetitionsPage() {
 			<div>
 				<div className='flex gap-x-4 py-3 justify-center bg-[#f9f9f9]'>
 					{navItems.map((n) => (
-						<div key={n}>{n}</div>
+						<div key={n} className='cursor-pointer'>{n}</div>
 					))}
 				</div>
 			</div>
