@@ -15,7 +15,7 @@ export const TopLigas = ({ ligas }) => {
 		<div className='grid grid-cols-2'>
 			{ligaRound.map((l) => (
 				<div key={l.id}>
-					<div className='flex border p-2 cursor-pointer shadow'>
+					<div className='flex h-24 border p-2 cursor-pointer shadow'>
 						<Image src={l.logo} alt={l.name} width={48} height={48} />
 						<div className='px-2 py-0'>
 							<div className='flex gap-x-2'>

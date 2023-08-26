@@ -22,11 +22,15 @@ export default async function CompetitionsPage() {
 			<div>
 				<div className='flex gap-x-4 py-3 justify-center bg-[#f9f9f9]'>
 					{navItems.map((n) => (
-						<div key={n} className='cursor-pointer'>{n}</div>
+						<div key={n}>
+							<div className='cursor-pointer' >
+								{n}
+							</div>
+						</div>
 					))}
 				</div>
 			</div>
-			<div className='w-3/5 p-2'>
+			<div className='w-full p-2'>
 				<div className='border bg-[#f9f9f9] flex justify-center p-1 shadow'>
 					<h1 className='text-sm'>TOP LEAGUES AND COMPETITIONS</h1>
 				</div>
