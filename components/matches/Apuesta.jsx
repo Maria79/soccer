@@ -14,7 +14,7 @@ export const Apuesta = ({result}) => {
     if(result === '1'){
       setTickedOne(true)
     }
-    if(result === 'x'){
+    if(result === 'X'){
       setTickedX(true)
     }
     if(result === '2'){
