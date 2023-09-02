@@ -1,3 +1,6 @@
 {
-  "recommendations": ["abusaidm.html-snippets"]
+  "recommendations": [
+    "abusaidm.html-snippets",
+    "fallenmax.mithril-emmet"
+  ]
 }

@@ -41,6 +41,7 @@ export default async function MatchesPage() {
           </div>
         ))}
       </div>
+      
     </div>
   );
 }
