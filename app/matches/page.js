@@ -1,5 +1,6 @@
 import { Apuesta } from "@/components/matches/Apuesta";
 import { DiaPartido } from "@/components/matches/DiaPartido";
+import Revenue from "@/components/matches/Revenue";
 import getAllMatches from "@/lib/getAllMatches";
 
 export default async function MatchesPage() {
@@ -8,27 +9,24 @@ export default async function MatchesPage() {
   const ganancias = partidosData.quiniela.revenue;
   const quiniela = partidosData.quiniela;
 
-  let euro = Intl.NumberFormat("es-Es", {
-    style: "currency",
-    currency: "EUR",
-  });
+  const date = new Date(quiniela.date);
+  const day = date.getDate();
+  const month = date.getMonth() + 1; // JavaScript months are 0-based
+  const year = date.getFullYear();
+
+  const formattedDate = `${day}-${month}-${year}`;
+
+  // console.log(formattedDate);
 
   return (
     <div className="max-w-4xl mx-auto">
       <div className="my-7">
-        <div className="text-2xl">Matches</div>
+        <div className="text-2xl">
+          Apuestas de los partidos quiniela en España
+        </div>
       </div>
-      <div className="mb-4">
-        <h2>
-          Ganancias: <span>{euro.format(ganancias)}</span>
-        </h2>
-        <h2>
-          Jackpot: <span>{euro.format(quiniela.jackpot)}</span>
-        </h2>
-        <h2>
-          Total de apuestas: <span>{euro.format(quiniela.total_bets)}</span>
-        </h2>
-      </div>
+      <small>{formattedDate}</small>
+      <Revenue ganancias={ganancias} quiniela={quiniela} />
       <div className="max-w-lg mx-auto">
         {partidos.map((p) => (
           <div key={p.id}>
@@ -41,7 +39,6 @@ export default async function MatchesPage() {
           </div>
         ))}
       </div>
-      
     </div>
   );
 }

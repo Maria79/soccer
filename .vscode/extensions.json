@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "abusaidm.html-snippets",
-    "fallenmax.mithril-emmet"
+    "fallenmax.mithril-emmet",
+    "esbenp.prettier-vscode"
   ]
 }

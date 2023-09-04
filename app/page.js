@@ -1,13 +1,15 @@
-import Link from "next/link";
+import Matchday from "@/components/main-page/Matchday";
+import getLaLigaMatchday, { getPremierMatchday } from "@/lib/getMatchDay";
 
-export default function Home() {
+export default async function Home() {
+  const laLiga = await getLaLigaMatchday();
+  const premier = await getPremierMatchday();
+  // console.log(matchDay);
+
   return (
     <div className="p-5">
-      <div className="flex gap-x-4 justify-center">
-        <Link href="/matches">Matches</Link>
-        <Link href="competitions">Competitions</Link>
-        <Link href="teams">Teams</Link>
-      </div>
+      {/* match of the day */}
+      <Matchday laLiga={laLiga} premier={premier} />
     </div>
   );
 }
