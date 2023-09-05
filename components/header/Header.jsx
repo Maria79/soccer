@@ -3,7 +3,7 @@ import { AiOutlineHome } from "react-icons/ai";
 
 export const Header = () => {
   return (
-    <div className="w-full h-24 bg-orange-300">
+    <div className="w-full  bg-neutral-200">
       <div className="p-5">
         <div className="max-w-2xl mx-auto flex gap-x-4 justify-center items-center">
           <Link href="/" className="flex-start">

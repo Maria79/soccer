@@ -1,6 +1,8 @@
 import { Apuesta } from "@/components/matches/Apuesta";
 import { DiaPartido } from "@/components/matches/DiaPartido";
 import Revenue from "@/components/matches/Revenue";
+import WeekView from "@/components/matches/week/WeekView";
+
 import getAllMatches from "@/lib/getAllMatches";
 
 export default async function MatchesPage() {
@@ -20,7 +22,12 @@ export default async function MatchesPage() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="my-7">
+      <div>
+        <h1>Week View with Today at the Center</h1>
+        <WeekView />
+      </div>
+
+      {/* <div className="my-7">
         <div className="text-2xl">
           Apuestas de los partidos quiniela en España
         </div>
@@ -38,7 +45,7 @@ export default async function MatchesPage() {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
