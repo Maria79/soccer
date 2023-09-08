@@ -2,7 +2,6 @@ import React from "react";
 
 const Liga = ({ laLiga }) => {
   const liga = laLiga;
-  console.log(liga);
   return (
     <div className="mb-4">
       <div>

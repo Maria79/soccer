@@ -17,36 +17,42 @@ const WeekView = () => {
     date.setDate(today.getDate() - 3 + i);
 
     daysOfWeek.push({
-      date: date.toLocaleDateString(),
-      dateOfMonth: date.toLocaleDateString()[0].split("/"),
+      date: date.toLocaleDateString("en-GB", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      }),
+      dateOfMonth: date.toLocaleDateString("en-GB", { day: "2-digit" }),
       isToday: date.toDateString() === today.toDateString(),
-      dayOfWeek: date.toLocaleDateString("en-UK", { weekday: "short" }), // Adjust the day order
-      month: date.toLocaleDateString("en-UK", { month: "short" }),
+      dayOfWeek: date.toLocaleDateString("en-GB", { weekday: "short" }), // Adjust the day order
+      month: date.toLocaleDateString("en-GB", { month: "short" }),
     });
   }
 
   return (
-    <div className="flex gap-x-3  border rounded-md">
+    <div className="max-w-4xl mx-auto px-1 pt-2 flex items-center justify-center gap-x-3 border rounded-md shadow">
       {daysOfWeek.map((day, index) => (
         <div
           key={index}
-          className={`w-24  px-1 py-2 flex items-center justify-center ${
-            day.isToday ? "bg-blue-500 text-white" : ""
-          }`}
+          className="w-40  px-1 py-2 flex items-center justify-center"
         >
-          <div className="flex flex-col items-center">
+          <div
+            className={`flex flex-col items-center ${
+              day.isToday ? "border-b-2 border-lime-700" : "border-none"
+            }`}
+          >
             <div>{day.dayOfWeek}</div>
-            <div>{day.isToday ? "Today" : null}</div>
+            <div className="text-2xl">{day.isToday ? "Today" : null}</div>
 
             <div>
               {day.isToday ? (
-                <div>
+                <div className="text-xs">
                   {day.dateOfMonth} {day.month}
                 </div>
               ) : (
                 <div className="flex flex-col items-center">
-                  <div>{day.dateOfMonth}</div>
-                  <div>{day.month}</div>
+                  <div className="text-2xl">{day.dateOfMonth}</div>
+                  <div className="text-xs">{day.month}</div>
                 </div>
               )}
             </div>

@@ -5,11 +5,7 @@ export const Competitions = async () => {
   const comptEuL = await getEuCompetitions();
   const comptEu = comptEuL.countries;
 
-  //   console.log(comptEu);
-
-  //   const orden = comptEu.map((c) => c.id);
   const sortedOrder = comptEu.sort((a, b) => a.id - b.id);
-  console.log(sortedOrder);
 
   return (
     <div>
